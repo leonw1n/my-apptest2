@@ -1,8 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { GoogleAIFileManager} from "@google/generative-ai/server";
 
-const genAI = new GoogleGenerativeAI("AIzaSyAKFvG_ryCTxx54pjjVvGBkzL1Iwei8J5M");
-const fileManager = new GoogleAIFileManager("AIzaSyAKFvG_ryCTxx54pjjVvGBkzL1Iwei8J5M");
+const genAI = new GoogleGenerativeAI(process.env.AI_KEY);
+const fileManager = new GoogleAIFileManager(process.env.AI_KEY);
 
 const uploadResponse = await fileManager.uploadFile("jetpack.jpg", {
     mimeType: "image/jpeg",
